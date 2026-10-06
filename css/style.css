@@ -90,3 +90,11 @@ h1 {
   border: 3px solid #111;
   font-size: 20px;
 }
+
+/* Without this, only the thin outline reacts to the mouse because fill is "none".
+   pointer-events: all makes the whole inside of the shape clickable. */
+.place polygon,
+.place ellipse,
+.place rect {
+  pointer-events: all;
+}
