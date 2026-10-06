@@ -34,7 +34,7 @@ h1 {
 .place circle {
   fill: none;
   stroke: #111;
-  stroke-width: 3;
+  stroke-width: 4;
 }
 
 .place text {
