@@ -19,3 +19,28 @@ h1 {
   margin: 0;
   font-size: 28px;
 }
+
+/* ---------- Map ---------- */
+#map {
+  display: block;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* every building starts as an outline only */
+.place polygon,
+.place ellipse,
+.place circle {
+  fill: none;
+  stroke: #111;
+  stroke-width: 3;
+}
+
+.place text {
+  font-size: 48px;
+  font-weight: bold;
+  text-anchor: middle;
+  fill: #111;
+  pointer-events: none; /* so the text doesn't block the hover */
+}
