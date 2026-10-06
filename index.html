@@ -13,7 +13,61 @@
     </header>
 
     <main>
-      <!-- the map will go here -->
+      <!-- The map is an SVG. The shapes are drawn on the wireframe's coordinates,
+           and the group is rotated so the campus reads left to right. -->
+      <svg id="map" viewBox="0 0 2000 1547" xmlns="http://www.w3.org/2000/svg">
+        <g transform="matrix(0 -1 1 0 0 1547)">
+
+          <a href="places/d2.html" class="place" id="d2">
+            <polygon points="600,50 906,50 898,247 618,247" />
+            <text x="760" y="165">D2</text>
+          </a>
+
+          <a href="places/c3.html" class="place" id="c3">
+            <polygon points="582,276 683,361 629,405 671,405 671,570 625,573 692,655 609,739 457,587 457,401" />
+            <text x="570" y="520">C3</text>
+          </a>
+
+          <a href="places/c2.html" class="place" id="c2">
+            <ellipse cx="559" cy="1039" rx="149" ry="244" />
+            <text x="559" y="1050">C2</text>
+          </a>
+
+          <a href="places/palms.html" class="place" id="palms">
+            <rect x="740" y="965" width="140" height="170" fill-opacity="0" />
+            <circle cx="768" cy="993" r="12" /><circle cx="810" cy="993" r="12" /><circle cx="851" cy="993" r="12" /><circle cx="768" cy="1043" r="12" /><circle cx="810" cy="1043" r="12" /><circle cx="851" cy="1043" r="12" /><circle cx="768" cy="1105" r="12" /><circle cx="810" cy="1105" r="12" /><circle cx="851" cy="1105" r="12" />
+          </a>
+
+          <a href="places/c1.html" class="place" id="c1">
+            <polygon points="564,1377 665,1377 665,1555 632,1587 632,1646 676,1691 593,1789 482,1684 482,1514" />
+            <text x="570" y="1590">C1</text>
+          </a>
+
+          <a href="places/d1.html" class="place" id="d1">
+            <polygon points="764,1696 838,1699 953,1857 903,1892 684,1892 651,1875" />
+            <text x="790" y="1810">D1</text>
+          </a>
+
+          <!-- All the dorm buildings live in ONE link, so they highlight together -->
+          <a href="places/dorms.html" class="place" id="dorms">
+            <polygon points="1097,121 1176,221 1176,346 1110,346 1110,252 1088,224 1061,262 1011,211" />
+            <polygon points="990,233 1045,290 981,342 981,350 1051,384 1003,457 898,387 893,319" />
+            <polygon points="1171,358 1173,545 1027,476 1069,394 1110,421 1110,358" />
+            <polygon points="897,407 1023,488 995,558 943,523 943,605 864,605 864,437" />
+            <polygon points="1025,494 1178,575 1178,661 1049,744 990,686 1106,622 1010,561" />
+            <polygon points="863,655 942,642 957,719 975,695 1040,752 948,872 882,806" />
+            <polygon points="1099,733 1186,733 1186,933 1127,992 957,992 957,900 1077,900 1099,878" />
+            <polygon points="957,1090 1123,1090 1187,1155 1184,1325 1093,1302 1093,1187 1075,1172 957,1172" />
+            <polygon points="907,1197 1010,1300 967,1331 995,1427 905,1427 889,1217" />
+            <polygon points="1031,1300 1185,1357 1188,1491 1050,1569 1007,1491 1100,1445 1100,1414 1003,1383" />
+            <polygon points="907,1445 971,1445 971,1513 989,1495 1042,1578 936,1640 906,1590" />
+            <polygon points="1063,1600 1156,1550 1185,1550 1185,1739 1110,1739 1110,1646 1089,1656" />
+            <polygon points="951,1660 1033,1615 1084,1690 1038,1707 1038,1720 1085,1766 997,1826 934,1735" />
+            <polygon points="1015,1818 1088,1758 1096,1805 1123,1752 1185,1779 1185,1815 1129,1950 1099,1965" />
+          </a>
+
+        </g>
+      </svg>
     </main>
   </body>
 </html>
