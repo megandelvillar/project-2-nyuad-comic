@@ -44,3 +44,22 @@ h1 {
   fill: #111;
   pointer-events: none; /* so the text doesn't block the hover */
 }
+
+/* ---------- Hover colors (one per place, from the wireframe) ---------- */
+.place polygon,
+.place ellipse {
+  transition: fill 0.2s;
+}
+
+#d2:hover polygon     { fill: #f8ebb2; }
+#c3:hover polygon     { fill: #b3a6b9; }
+#c2:hover ellipse     { fill: #d6d8ea; }
+#palms:hover rect     { fill: #a8b59c; fill-opacity: 1; }
+#palms:hover circle   { fill: #fff; }
+#c1:hover polygon     { fill: #c3c7c6; }
+#d1:hover polygon     { fill: #e3b06b; }
+#dorms:hover polygon  { fill: #e2b8ae; }
+
+.place {
+  cursor: pointer;
+}
