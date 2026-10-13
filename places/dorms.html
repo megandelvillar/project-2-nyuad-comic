@@ -28,6 +28,7 @@
       <div class="row">
       <div class="panel panel-flex" style="--ratio: 1.28">
         <img src="../images/dorms/dorms-panel-4.jpg" alt="Under the blanket at 13:00, crying and thinking she feels so isolated" />
+        <button class="phone-button" id="phone-button" aria-label="Play the song on her phone"></button>
       </div>
 
       <!-- Panels 5 and 6 share one spot: click the door to open it and close it again -->
@@ -39,6 +40,12 @@
       </div>
       </div>
     </main>
+
+    <!-- Song player, hidden until the phone in panel 4 is clicked.
+         The song streams from the official YouTube video (we do not host the audio). -->
+    <div class="lightbox" id="song-player" hidden>
+      <div class="player-box" id="player-box"></div>
+    </div>
 
     <script src="../js/dorms.js"></script>
   </body>
