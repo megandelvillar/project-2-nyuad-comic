@@ -2,7 +2,7 @@
 
 Project 2: Interactive Comic for Communications Lab, by Megan Del Villar, Sanjana Satendra and Tiffy Yu.
 
-An interactive comic about the "spirits" of the NYU Abu Dhabi campus: the feelings and small moments every student recognizes. The home page is an illustrated map of campus, and clicking a building opens the comic strip that happens there. Inspired by Emma Carroll's web comic A Pretty Place, where a map of a house leads to a comic about each room.
+An interactive comic about the "spirits" of the NYU Abu Dhabi campus: the feelings and small moments every student recognizes. The home page is an illustrated map of campus, and clicking a building opens the comic strip that happens there. Inspired by Em Carroll's web comic A Pretty Place, where a map of a house leads to a comic about each room.
 
 Live site: https://megandelvillar.github.io/project-2-nyuad-comic/
 
