@@ -347,3 +347,47 @@ h1 {
   0%, 100% { box-shadow: 0 0 3px 1px rgba(255, 255, 255, 0.5); }
   50%      { box-shadow: 0 0 14px 5px rgba(255, 255, 255, 0.95); }
 }
+
+/* ---------- D1 page: ice cream with sprinkles ---------- */
+/* both pictures sit in the same spot; the sprinkles one fades in on click */
+.ice-button {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.ice-button img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ice-sprinkles {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+.ice-button.sprinkled .ice-sprinkles {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* soft glowing edge as a hint that it can be clicked */
+.ice-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  animation: door-glow 2.4s ease-in-out infinite;
+}
+
+.ice-button.sprinkled::after {
+  animation: none;
+}

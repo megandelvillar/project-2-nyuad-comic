@@ -13,11 +13,26 @@
     </header>
 
     <main class="strip">
-      <div class="panel">Panel 1</div>
-      <div class="panel">Panel 2</div>
-      <div class="panel">Panel 3</div>
-      <div class="panel">Panel 4</div>
-      <div class="panel">Panel 5</div>
+      <div class="panel panel-img">
+        <img src="../images/d1/d1-panel-1.jpg" alt="He thinks he did a really bad job on his quiz and feels terrible" />
+      </div>
+      <div class="panel panel-img">
+        <img src="../images/d1/d1-panel-2.jpg" alt="He asks for an ice cream and the server asks what flavor; he says vanilla, surprise me" />
+      </div>
+
+      <!-- Panels 3 and 4 share one spot: click the ice cream to add sprinkles, click again to remove them -->
+      <div class="panel panel-img ice-panel">
+        <button class="ice-button" id="ice-button" aria-pressed="false" aria-label="Add sprinkles to the ice cream">
+          <img class="ice-plain" src="../images/d1/d1-panel-3.jpg" alt="A scoop of vanilla ice cream" />
+          <img class="ice-sprinkles" src="../images/d1/d1-panel-4.jpg" alt="The ice cream now has colorful sprinkles" />
+        </button>
+      </div>
+
+      <div class="panel panel-img">
+        <img src="../images/d1/d1-panel-5.jpg" alt="He smiles and says he feels much better having the ice cream now" />
+      </div>
     </main>
+
+    <script src="../js/d1.js"></script>
   </body>
 </html>
