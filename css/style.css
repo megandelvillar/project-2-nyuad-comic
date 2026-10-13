@@ -68,7 +68,7 @@ h1 {
 
 /* ---------- Hover colors (only for the places you can click) ---------- */
 #c3:hover polygon     { fill: #cdbfd3; }
-#c1:hover polygon     { fill: #d3d6d5; }
+#c2:hover ellipse     { fill: #d6d8ea; }
 #d1:hover polygon     { fill: #f0c88a; }
 #dorms:hover polygon  { fill: #efc9bf; }
 
