@@ -24,13 +24,24 @@
       </div>
       <div class="panel panel-img">
         <img src="../images/c3/c3-panel-4.jpg" alt="She sees a Piano Class poster and wonders about it" />
+        <button class="poster-button" id="poster-button" aria-label="Zoom in on the Piano Class poster"></button>
       </div>
       <div class="panel panel-img">
         <img src="../images/c3/c3-panel-5.jpg" alt="She decides it seems like a good opportunity and could register" />
       </div>
       <div class="panel panel-img">
         <img src="../images/c3/c3-panel-6.jpg" alt="In the lesson, the teacher shows her how to play and says nice" />
+        <button class="note note-1" aria-label="Play a note"><img src="../images/c3/note-1.png" alt="" /></button>
+        <button class="note note-2" aria-label="Play a note"><img src="../images/c3/note-2.png" alt="" /></button>
+        <button class="note note-3" aria-label="Play a note"><img src="../images/c3/note-3.png" alt="" /></button>
       </div>
     </main>
+
+    <!-- Big poster, hidden until the poster in panel 4 is clicked -->
+    <div class="lightbox" id="lightbox" hidden>
+      <img src="../images/c3/piano-poster.jpg" alt="Piano Class poster: beginner friendly lessons, Fall 2026, C3-106 Thursday 7pm" />
+    </div>
+
+    <script src="../js/c3.js"></script>
   </body>
 </html>

@@ -119,3 +119,97 @@ h1 {
     flex-basis: 100%;
   }
 }
+
+/* ---------- Interactive extras on the C3 page ---------- */
+.panel-img {
+  position: relative;   /* lets the notes and poster button sit on top of the image */
+}
+
+/* the clickable area over the poster in panel 4 */
+.poster-button {
+  position: absolute;
+  left: 50.5%;
+  top: 12.7%;
+  width: 39%;
+  height: 73%;
+  background: transparent;
+  border: none;
+  cursor: zoom-in;
+  padding: 0;
+}
+
+.poster-button:hover {
+  outline: 4px solid rgba(255, 255, 255, 0.8);
+}
+
+/* the zoomed poster */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  z-index: 10;
+  animation: zoom-in 0.25s ease-out;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox img {
+  max-height: 92vh;
+  max-width: 92vw;
+}
+
+@keyframes zoom-in {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* the music notes in panel 6 */
+.note {
+  position: absolute;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transform-origin: top center;       /* swings from the top, like it hangs on the wall */
+  animation: sway 3s ease-in-out infinite;
+}
+
+.note img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.note:hover {
+  filter: brightness(1.15) drop-shadow(0 0 6px #fff);
+}
+
+.note-1 { left: 8%;  top: 3%;  width: 7%;   animation-delay: 0s; }
+.note-2 { left: 18%; top: 5%;  width: 8%;   animation-delay: -1s; }
+.note-3 { left: 29%; top: 4%;  width: 6%;   animation-delay: -2s; }
+
+/* slow swing while waiting */
+@keyframes sway {
+  0%, 100% { transform: rotate(-6deg); }
+  50%      { transform: rotate(6deg); }
+}
+
+/* bigger swing right after a click */
+.note.ring {
+  animation: swing 1.2s ease-out;
+}
+
+@keyframes swing {
+  0%   { transform: rotate(0deg); }
+  15%  { transform: rotate(-25deg); }
+  35%  { transform: rotate(20deg); }
+  55%  { transform: rotate(-12deg); }
+  75%  { transform: rotate(6deg); }
+  100% { transform: rotate(0deg); }
+}
