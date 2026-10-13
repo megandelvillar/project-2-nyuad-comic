@@ -315,3 +315,35 @@ h1 {
     flex-direction: column;
   }
 }
+
+/* ---------- Phone in the crying panel (dorms page) ---------- */
+.panel-flex {
+  position: relative;
+}
+
+/* clickable area over the phone; it is tilted to match the drawing */
+.phone-button {
+  position: absolute;
+  left: 76%;
+  top: 19%;
+  width: 17%;
+  height: 31%;
+  padding: 0;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  cursor: pointer;
+  transform: rotate(14deg);
+  animation: phone-glow 2.4s ease-in-out infinite;  /* soft hint that it can be clicked */
+}
+
+/* while the song plays, the glow stays steady */
+.phone-button.playing {
+  animation: none;
+  box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.9);
+}
+
+@keyframes phone-glow {
+  0%, 100% { box-shadow: 0 0 3px 1px rgba(255, 255, 255, 0.5); }
+  50%      { box-shadow: 0 0 14px 5px rgba(255, 255, 255, 0.95); }
+}
