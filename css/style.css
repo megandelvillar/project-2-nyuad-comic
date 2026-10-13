@@ -144,13 +144,8 @@ h1 {
   border: none;
   cursor: zoom-in;
   padding: 0;
-  animation: poster-glow 1.6s ease-in-out infinite;
 }
 
-@keyframes poster-glow {
-  0%, 100% { box-shadow: 0 0 6px 2px rgba(200, 160, 255, 0.55), 0 0 0 1px rgba(200, 160, 255, 0.6); }
-  50%      { box-shadow: 0 0 16px 6px rgba(210, 175, 255, 0.95), 0 0 0 2px rgba(220, 195, 255, 0.95); }
-}
 
 
 
@@ -224,16 +219,6 @@ h1 {
   100% { transform: rotate(0deg); }
 }
 
-/* purple twinkling glow so people notice the notes are clickable */
-.note img {
-  animation: glow 1.6s ease-in-out infinite;
-}
-
-@keyframes glow {
-  0%, 100% { filter: drop-shadow(0 0 2px rgba(200, 160, 255, 0.7)) drop-shadow(0 0 4px rgba(200, 160, 255, 0.5)); }
-  50%      { filter: drop-shadow(0 0 5px rgba(210, 175, 255, 1)) drop-shadow(0 0 10px rgba(200, 160, 255, 0.8)); }
-}
-
 /* ---------- Dorms page: panels with different shapes ---------- */
 /* flex-grow is the image's width / height, so every panel in a row ends up the same height */
 .panel-flex {
@@ -268,15 +253,6 @@ h1 {
   cursor: pointer;
 }
 
-/* soft glowing edge on top of the picture, as a hint that the door can be clicked */
-.door-button::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  animation: door-glow 1.6s ease-in-out infinite;
-}
-
 .door-button img {
   position: absolute;
   inset: 0;
@@ -296,14 +272,6 @@ h1 {
 
 .door-button.open .door-closed {
   opacity: 0;
-}
-
-/* once opened, stop the glow */
-
-
-@keyframes door-glow {
-  0%, 100% { box-shadow: inset 0 0 14px 3px rgba(200, 160, 255, 0.45), 0 0 0 2px rgba(200, 160, 255, 0.5); }
-  50%      { box-shadow: inset 0 0 36px 9px rgba(205, 170, 255, 0.85), 0 0 0 3px rgba(215, 185, 255, 0.9); }
 }
 
 /* the dorms page is two rows: 3 panels, then 2 panels */
@@ -341,15 +309,6 @@ h1 {
   background: transparent;
   cursor: pointer;
   transform: rotate(14deg);
-  animation: phone-glow 1.6s ease-in-out infinite;  /* soft hint that it can be clicked */
-}
-
-/* while the song plays, the glow stays steady */
-
-
-@keyframes phone-glow {
-  0%, 100% { box-shadow: 0 0 6px 2px rgba(200, 160, 255, 0.55), 0 0 0 1px rgba(200, 160, 255, 0.6); }
-  50%      { box-shadow: 0 0 16px 6px rgba(210, 175, 255, 0.95), 0 0 0 2px rgba(220, 195, 255, 0.95); }
 }
 
 /* ---------- D1 page: ice cream with sprinkles ---------- */
@@ -383,18 +342,52 @@ h1 {
   transform: scale(1);
 }
 
-/* soft glowing edge as a hint that it can be clicked */
-.ice-button::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  animation: door-glow 1.6s ease-in-out infinite;
-}
-
 
 
 /* the DORMS label sits on the purple background, so it needs a light color */
 .place .dorms-label {
   fill: #fbf7ee;
+}
+
+
+/* ---------- Hover: clickable things grow a little ---------- */
+/* the hand cursor + a small zoom tells you "you can click this" */
+
+/* music notes (the img grows, the button keeps swinging) */
+.note img {
+  transition: transform 0.2s;
+}
+.note:hover img {
+  transform: scale(1.35);
+}
+
+/* door and ice cream: the whole picture zooms inside its panel */
+.ice-panel {
+  overflow: hidden;
+}
+.door-button,
+.ice-button {
+  transition: transform 0.25s;
+}
+.door-button:hover,
+.ice-button:hover {
+  transform: scale(1.06);
+}
+
+/* phone (dorms) and poster (C3) are part of the panel picture, so on hover
+   the picture zooms in, centered on the phone or the poster */
+.panel-flex img,
+.panel-img > img {
+  transition: transform 0.3s;
+}
+.panel-flex:has(.phone-button:hover) > img {
+  transform-origin: 85% 38%;
+  transform: scale(1.08);
+}
+.panel-img {
+  overflow: hidden;
+}
+.panel-img:has(.poster-button:hover) > img {
+  transform-origin: 70% 50%;
+  transform: scale(1.1);
 }
