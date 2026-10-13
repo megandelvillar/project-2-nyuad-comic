@@ -144,11 +144,15 @@ h1 {
   border: none;
   cursor: zoom-in;
   padding: 0;
+  animation: poster-glow 1.6s ease-in-out infinite;
 }
 
-.poster-button:hover {
-  outline: 4px solid rgba(255, 255, 255, 0.8);
+@keyframes poster-glow {
+  0%, 100% { box-shadow: 0 0 8px 2px rgba(168, 85, 247, 0.6); }
+  50%      { box-shadow: 0 0 26px 10px rgba(190, 110, 255, 1); }
 }
+
+
 
 /* the zoomed poster */
 .lightbox {
@@ -194,9 +198,7 @@ h1 {
   height: auto;
 }
 
-.note:hover {
-  filter: brightness(1.15) drop-shadow(0 0 6px #fff);
-}
+
 
 .note-1 { left: 8%;  top: 3%;  width: 7%;   animation-delay: 0s; }
 .note-2 { left: 18%; top: 5%;  width: 8%;   animation-delay: -1s; }
@@ -222,14 +224,14 @@ h1 {
   100% { transform: rotate(0deg); }
 }
 
-/* soft pulsing glow so people notice the notes are clickable */
+/* purple twinkling glow so people notice the notes are clickable */
 .note img {
-  animation: glow 2.4s ease-in-out infinite;
+  animation: glow 1.6s ease-in-out infinite;
 }
 
 @keyframes glow {
-  0%, 100% { filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.6)); }
-  50%      { filter: drop-shadow(0 0 7px rgba(255, 255, 255, 0.95)); }
+  0%, 100% { filter: drop-shadow(0 0 3px rgba(168, 85, 247, 0.7)) drop-shadow(0 0 6px rgba(168, 85, 247, 0.5)); }
+  50%      { filter: drop-shadow(0 0 8px rgba(200, 130, 255, 1)) drop-shadow(0 0 16px rgba(168, 85, 247, 0.9)); }
 }
 
 /* ---------- Dorms page: panels with different shapes ---------- */
@@ -272,7 +274,7 @@ h1 {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  animation: door-glow 2.4s ease-in-out infinite;
+  animation: door-glow 1.6s ease-in-out infinite;
 }
 
 .door-button img {
@@ -297,14 +299,11 @@ h1 {
 }
 
 /* once opened, stop the glow */
-.door-button.open::after {
-  animation: none;
-  box-shadow: none;
-}
+
 
 @keyframes door-glow {
-  0%, 100% { box-shadow: inset 0 0 6px 1px rgba(255, 255, 255, 0.4); }
-  50%      { box-shadow: inset 0 0 28px 8px rgba(255, 255, 255, 0.95); }
+  0%, 100% { box-shadow: inset 0 0 14px 3px rgba(168, 85, 247, 0.55); }
+  50%      { box-shadow: inset 0 0 46px 14px rgba(190, 110, 255, 1); }
 }
 
 /* the dorms page is two rows: 3 panels, then 2 panels */
@@ -342,18 +341,15 @@ h1 {
   background: transparent;
   cursor: pointer;
   transform: rotate(14deg);
-  animation: phone-glow 2.4s ease-in-out infinite;  /* soft hint that it can be clicked */
+  animation: phone-glow 1.6s ease-in-out infinite;  /* soft hint that it can be clicked */
 }
 
 /* while the song plays, the glow stays steady */
-.phone-button.playing {
-  animation: none;
-  box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.9);
-}
+
 
 @keyframes phone-glow {
-  0%, 100% { box-shadow: 0 0 3px 1px rgba(255, 255, 255, 0.5); }
-  50%      { box-shadow: 0 0 14px 5px rgba(255, 255, 255, 0.95); }
+  0%, 100% { box-shadow: 0 0 8px 2px rgba(168, 85, 247, 0.6); }
+  50%      { box-shadow: 0 0 26px 10px rgba(190, 110, 255, 1); }
 }
 
 /* ---------- D1 page: ice cream with sprinkles ---------- */
@@ -393,12 +389,10 @@ h1 {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  animation: door-glow 2.4s ease-in-out infinite;
+  animation: door-glow 1.6s ease-in-out infinite;
 }
 
-.ice-button.sprinkled::after {
-  animation: none;
-}
+
 
 /* the DORMS label sits on the purple background, so it needs a light color */
 .place .dorms-label {
