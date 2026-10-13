@@ -6,7 +6,7 @@
 body {
   margin: 0;
   background-color: #f9f6ea;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Nunito", Arial, sans-serif;
   color: #222;
 }
 
@@ -17,52 +17,60 @@ header {
 
 h1 {
   margin: 0;
-  font-size: 28px;
+  font-family: "Fredoka", "Nunito", sans-serif;  /* round and friendly, to feel cozy */
+  font-weight: 600;
+  font-size: 34px;
 }
 
 /* ---------- Map ---------- */
+/* the home page is purple like the map background */
+.home {
+  background-color: #644b6e;
+  color: #fbf7ee;
+}
+
+.home .back {
+  color: #fbf7ee;
+}
+
 #map {
   display: block;
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
+  padding-bottom: 30px;
 }
 
-/* every building starts as an outline only */
-.place polygon,
-.place ellipse,
-.place circle {
-  fill: none;
-  stroke: #111;
-  stroke-width: 4;
-}
-
-.place text {
-  font-size: 48px;
-  font-weight: bold;
-  text-anchor: middle;
-  fill: #111;
-  pointer-events: none; /* so the text doesn't block the hover */
-}
-
-/* ---------- Hover colors (one per place, from the wireframe) ---------- */
+/* every building is off white */
+.building polygon,
+.building ellipse,
 .place polygon,
 .place ellipse {
+  fill: #f8f4ea;
+  stroke: #d9d2c0;
+  stroke-width: 0.6;
   transition: fill 0.2s;
 }
 
-#d2:hover polygon     { fill: #f8ebb2; }
-#c3:hover polygon     { fill: #b3a6b9; }
-#c2:hover ellipse     { fill: #d6d8ea; }
-#palms:hover rect     { fill: #a8b59c; fill-opacity: 1; }
-#palms:hover circle   { fill: #fff; }
-#c1:hover polygon     { fill: #c3c7c6; }
-#d1:hover polygon     { fill: #e3b06b; }
-#dorms:hover polygon  { fill: #e2b8ae; }
-
 .place {
-  cursor: pointer;
+  cursor: pointer;   /* only the places you can click get the hand */
 }
+
+.place text {
+  font-family: "Fredoka", "Nunito", sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  fill: #644b6e;
+  pointer-events: none; /* so the text doesn't block the hover */
+}
+
+/* ---------- Hover colors (only for the places you can click) ---------- */
+#c3:hover polygon     { fill: #cdbfd3; }
+#c1:hover polygon     { fill: #d3d6d5; }
+#d1:hover polygon     { fill: #f0c88a; }
+#dorms:hover polygon  { fill: #efc9bf; }
 
 /* ---------- Place pages: comic strip layout with flexbox ---------- */
 .back {
@@ -390,4 +398,9 @@ h1 {
 
 .ice-button.sprinkled::after {
   animation: none;
+}
+
+/* the DORMS label sits on the purple background, so it needs a light color */
+.place .dorms-label {
+  fill: #fbf7ee;
 }

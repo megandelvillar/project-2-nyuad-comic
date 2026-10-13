@@ -3,72 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NYUAD Comic Map</title>
+    <title>NYUAD Experiences</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
+  <body class="home">
     <header>
-      <h1>NYUAD Comic Map</h1>
-      <p>Click a place on campus to read its story.</p>
+      <h1>NYUAD experiences</h1>
+      <p>Pick a place on campus to see what happened there.</p>
     </header>
 
     <main>
-      <!-- The map is an SVG. The shapes are drawn on the wireframe's coordinates,
-           and the group is rotated so the campus reads left to right. -->
-      <svg id="map" viewBox="0 250 2000 920" xmlns="http://www.w3.org/2000/svg">
-        <g transform="matrix(0 -1 1 0 0 1547)">
+      <svg id="map" viewBox="0 50 516 275" xmlns="http://www.w3.org/2000/svg">
+        <!-- Layers, from back to front: purple background, gray paths with trees, palm trees, buildings -->
+        <image href="images/map/background.jpg" x="0" y="0" width="516" height="360" />
+        <image href="images/map/paths-and-trees.png" x="0" y="0" width="516" height="360" />
+        <image href="images/map/palms.png" x="213" y="165" width="74" height="63" />
 
-          <a href="places/d2.html" class="place" id="d2">
-            <polygon points="600,50 906,50 898,247 618,247" />
-            <text x="760" y="165" transform="rotate(90 760 165)">D2</text>
-          </a>
-
-          <a href="places/c3.html" class="place" id="c3">
-            <polygon points="582,276 683,361 629,405 671,405 671,570 625,573 692,655 609,739 457,587 457,401" />
-            <text x="570" y="520" transform="rotate(90 570 520)">C3</text>
-          </a>
-
-          <a href="places/c2.html" class="place" id="c2">
-            <ellipse cx="559" cy="1039" rx="149" ry="244" />
-            <text x="559" y="1050" transform="rotate(90 559 1050)">C2</text>
-          </a>
-
-          <a href="places/palms.html" class="place" id="palms">
-            <text x="905" y="1040" transform="rotate(90 905 1040)">PALMS</text>
-            <rect x="740" y="965" width="140" height="170" fill-opacity="0" />
-            <circle cx="768" cy="993" r="12" /><circle cx="810" cy="993" r="12" /><circle cx="851" cy="993" r="12" /><circle cx="768" cy="1043" r="12" /><circle cx="810" cy="1043" r="12" /><circle cx="851" cy="1043" r="12" /><circle cx="768" cy="1105" r="12" /><circle cx="810" cy="1105" r="12" /><circle cx="851" cy="1105" r="12" />
-          </a>
-
-          <a href="places/c1.html" class="place" id="c1">
-            <polygon points="564,1377 665,1377 665,1555 632,1587 632,1646 676,1691 593,1789 482,1684 482,1514" />
-            <text x="570" y="1590" transform="rotate(90 570 1590)">C1</text>
-          </a>
-
-          <a href="places/d1.html" class="place" id="d1">
-            <polygon points="764,1696 838,1699 953,1857 903,1892 684,1892 651,1875" />
-            <text x="790" y="1810" transform="rotate(90 790 1810)">D1</text>
-          </a>
-
-          <!-- All the dorm buildings live in ONE link, so they highlight together -->
-          <a href="places/dorms.html" class="place" id="dorms">
-            <text x="1215" y="1040" transform="rotate(90 1215 1040)">DORMS</text>
-            <polygon points="1097,121 1176,221 1176,346 1110,346 1110,252 1088,224 1061,262 1011,211" />
-            <polygon points="990,233 1045,290 981,342 981,350 1051,384 1003,457 898,387 893,319" />
-            <polygon points="1171,358 1173,545 1027,476 1069,394 1110,421 1110,358" />
-            <polygon points="897,407 1023,488 995,558 943,523 943,605 864,605 864,437" />
-            <polygon points="1025,494 1178,575 1178,661 1049,744 990,686 1106,622 1010,561" />
-            <polygon points="863,655 942,642 957,719 975,695 1040,752 948,872 882,806" />
-            <polygon points="1099,733 1186,733 1186,933 1127,992 957,992 957,900 1077,900 1099,878" />
-            <polygon points="957,1090 1123,1090 1187,1155 1184,1325 1093,1302 1093,1187 1075,1172 957,1172" />
-            <polygon points="907,1197 1010,1300 967,1331 995,1427 905,1427 889,1217" />
-            <polygon points="1031,1300 1185,1357 1188,1491 1050,1569 1007,1491 1100,1445 1100,1414 1003,1383" />
-            <polygon points="907,1445 971,1445 971,1513 989,1495 1042,1578 936,1640 906,1590" />
-            <polygon points="1063,1600 1156,1550 1185,1550 1185,1739 1110,1739 1110,1646 1089,1656" />
-            <polygon points="951,1660 1033,1615 1084,1690 1038,1707 1038,1720 1085,1766 997,1826 934,1735" />
-            <polygon points="1015,1818 1088,1758 1096,1805 1123,1752 1185,1779 1185,1815 1129,1950 1099,1965" />
-          </a>
-
+        <!-- Buildings that are not clickable (no link, no label): D2 and C2 -->
+        <g class="building">
+          <polygon points="479.0,140.0 479.0,208.0 435.0,206.2 435.0,144.0" />
+          <ellipse cx="249.5" cy="131.0" rx="55.5" ry="36.0" />
         </g>
+
+        <!-- Clickable buildings -->
+        <a href="places/c1.html" class="place" id="c1">
+          <polygon points="169.0,131.2 169.0,153.6 128.8,153.6 121.6,146.2 108.3,146.2 98.1,156.0 76.0,137.6 99.7,113.0 138.1,113.0" />
+          <text x="123.2" y="138.9">C1</text>
+        </a>
+
+        <a href="places/c3.html" class="place" id="c3">
+          <polygon points="422.0,134.1 403.8,156.0 394.4,144.3 394.4,153.4 359.1,153.4 358.5,143.5 341.0,158.0 323.0,140.0 355.5,107.0 395.3,107.0" />
+          <text x="374.7" y="139.7">C3</text>
+        </a>
+
+        <a href="places/d1.html" class="place" id="d1">
+          <polygon points="88.0,177.9 87.4,193.6 54.3,218.0 47.0,207.4 47.0,161.0 50.6,154.0" />
+          <text x="62.4" y="185.3">D1</text>
+        </a>
+
+        <!-- All the dorm buildings live in ONE link, so they highlight together -->
+        <a href="places/dorms.html" class="place" id="dorms">
+          <polygon points="462.0,257.1 438.9,275.6 410.1,275.6 410.1,260.1 431.8,260.1 438.2,254.9 429.5,248.6 441.2,236.8" />
+          <polygon points="436.2,231.9 423.0,244.8 411.0,229.8 409.2,229.8 401.3,246.2 384.5,234.9 400.6,210.2 416.3,209.1" />
+          <polygon points="407.3,274.5 364.2,274.9 380.1,240.6 399.0,250.5 392.8,260.1 407.3,260.1" />
+          <polygon points="396.0,210.0 377.3,239.6 361.2,233.1 369.2,220.8 350.3,220.8 350.3,202.2 389.1,202.2" />
+          <polygon points="375.9,240.1 357.2,276.1 337.4,276.1 318.2,245.8 331.6,231.9 346.4,259.2 360.5,236.6" />
+          <polygon points="338.8,202.0 341.8,220.6 324.0,224.1 329.5,228.4 316.4,243.6 288.7,222.0 303.9,206.5" />
+          <polygon points="320.8,257.5 320.8,278.0 274.6,278.0 261.0,264.1 261.0,224.1 282.2,224.1 282.2,252.4 287.3,257.5" />
+          <polygon points="236.0,222.1 236.0,263.7 221.3,279.7 182.8,279.0 188.0,256.2 214.1,256.2 217.4,251.7 217.4,222.1" />
+          <polygon points="211.8,209.5 188.5,235.4 181.5,224.6 159.7,231.6 159.7,209.0 207.3,205.0" />
+          <polygon points="188.5,240.6 175.6,279.2 145.3,280.0 127.6,245.4 145.3,234.6 155.7,257.9 162.7,257.9 169.7,233.6" />
+          <polygon points="155.7,209.5 155.7,225.6 140.3,225.6 144.4,230.1 125.6,243.4 111.5,216.8 122.9,209.3" />
+          <polygon points="120.6,248.6 131.9,272.0 131.9,279.2 89.1,279.2 89.1,260.4 110.2,260.4 107.9,255.2" />
+          <polygon points="107.0,220.6 117.2,241.1 100.2,253.9 96.4,242.4 93.4,242.4 83.0,254.2 69.5,232.1 90.0,216.3" />
+          <polygon points="71.3,236.6 84.8,254.9 74.2,256.9 86.2,263.7 80.1,279.2 71.9,279.2 41.4,265.2 38.0,257.7" />
+          <text class="dorms-label" x="258" y="308">DORMS</text>
+        </a>
       </svg>
     </main>
   </body>
