@@ -12,12 +12,34 @@
       <h1>Dorms</h1>
     </header>
 
-    <main class="strip">
-      <div class="panel">Panel 1</div>
-      <div class="panel">Panel 2</div>
-      <div class="panel">Panel 3</div>
-      <div class="panel">Panel 4</div>
-      <div class="panel">Panel 5</div>
+    <main class="strip strip-rows">
+      <div class="row">
+      <div class="panel panel-flex" style="--ratio: 0.96">
+        <img src="../images/dorms/dorms-panel-1.jpg" alt="Midterm is coming: she looks at her desk and thinks it is time to lock in" />
+      </div>
+      <div class="panel panel-flex" style="--ratio: 0.97">
+        <img src="../images/dorms/dorms-panel-2.jpg" alt="Her octopus plushie pulls her toward bed: no locking in, more sleep" />
+      </div>
+      <div class="panel panel-flex" style="--ratio: 0.96">
+        <img src="../images/dorms/dorms-panel-3.jpg" alt="She is surprised to find herself pulled back to her bed by the octopus" />
+      </div>
+      </div>
+
+      <div class="row">
+      <div class="panel panel-flex" style="--ratio: 1.28">
+        <img src="../images/dorms/dorms-panel-4.jpg" alt="Under the blanket at 13:00, crying and thinking she feels so isolated" />
+      </div>
+
+      <!-- Panels 5 and 6 share one spot: click the door to open it and close it again -->
+      <div class="panel panel-flex door-panel" style="--ratio: 0.98">
+        <button class="door-button" id="door-button" aria-pressed="false" aria-label="Open the door">
+          <img class="door-closed" src="../images/dorms/dorms-panel-5.jpg" alt="Someone knocks on the door" />
+          <img class="door-open" src="../images/dorms/dorms-panel-6.jpg" alt="The door opens and two friends are there: this is why I love my friends" />
+        </button>
+      </div>
+      </div>
     </main>
+
+    <script src="../js/dorms.js"></script>
   </body>
 </html>

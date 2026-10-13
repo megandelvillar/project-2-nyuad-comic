@@ -223,3 +223,95 @@ h1 {
   0%, 100% { filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.6)); }
   50%      { filter: drop-shadow(0 0 7px rgba(255, 255, 255, 0.95)); }
 }
+
+/* ---------- Dorms page: panels with different shapes ---------- */
+/* flex-grow is the image's width / height, so every panel in a row ends up the same height */
+.panel-flex {
+  flex: var(--ratio) 1 0;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.panel-flex img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* the door: both pictures sit in the same spot, only one is visible */
+.door-panel {
+  aspect-ratio: 0.98;
+  position: relative;
+}
+
+.door-button {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* soft glowing edge on top of the picture, as a hint that the door can be clicked */
+.door-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  animation: door-glow 2.4s ease-in-out infinite;
+}
+
+.door-button img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s;
+}
+
+.door-open {
+  opacity: 0;
+}
+
+.door-button.open .door-open {
+  opacity: 1;
+}
+
+.door-button.open .door-closed {
+  opacity: 0;
+}
+
+/* once opened, stop the glow */
+.door-button.open::after {
+  animation: none;
+  box-shadow: none;
+}
+
+@keyframes door-glow {
+  0%, 100% { box-shadow: inset 0 0 6px 1px rgba(255, 255, 255, 0.4); }
+  50%      { box-shadow: inset 0 0 28px 8px rgba(255, 255, 255, 0.95); }
+}
+
+/* the dorms page is two rows: 3 panels, then 2 panels */
+.strip-rows {
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+}
+
+/* on phones, every panel goes full width */
+@media (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
