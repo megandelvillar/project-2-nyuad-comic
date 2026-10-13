@@ -213,3 +213,13 @@ h1 {
   75%  { transform: rotate(6deg); }
   100% { transform: rotate(0deg); }
 }
+
+/* soft pulsing glow so people notice the notes are clickable */
+.note img {
+  animation: glow 2.4s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% { filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.6)); }
+  50%      { filter: drop-shadow(0 0 7px rgba(255, 255, 255, 0.95)); }
+}
