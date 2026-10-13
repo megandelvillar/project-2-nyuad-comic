@@ -98,3 +98,24 @@ h1 {
 .place rect {
   pointer-events: all;
 }
+
+/* ---------- Panels that hold a real comic image ---------- */
+.panel-img {
+  flex: 1 1 calc(50% - 16px);  /* two panels per row, like a comic page */
+  min-height: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.panel-img img {
+  display: block;
+  width: 100%;          /* keeps the original 4:3 shape, nothing is cropped */
+  height: auto;
+}
+
+/* on phones the panels stack in one column */
+@media (max-width: 700px) {
+  .panel-img {
+    flex-basis: 100%;
+  }
+}
